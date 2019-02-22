@@ -16,9 +16,9 @@ class List extends Component {
 
     formSubmit = e => {
         const {formValue} = this.state;
-        const {addTodo} = this.props;
+        const {addToDo} = this.props;
         e.preventDefault();
-        addTodo({title: formValue});
+        addToDo({title: formValue});
         this.setState({formValue: ""});
     };
 
@@ -58,7 +58,7 @@ class List extends Component {
         );
     }
     componentWillMount() {
-        this.props.fetchTodos();
+        this.props.fetchToDos();
     }
     render() {
         const {showForm} = this.state;
@@ -86,6 +86,6 @@ const mapStateToProps = ({data}) => {
     return {
         data
     }
-}
+};
 
 export default connect(mapStateToProps, actions)(List);

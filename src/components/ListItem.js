@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {completeTodo} from '../actions';
-//'https://blog.bitsrc.io/building-a-todo-app-in-react-with-firebase-and-redux-ba3ab53a671b'
+import {completeToDo} from '../actions';
 class ListItem extends Component {
-    handleComplete = completeTodo => {
+    handleComplete = completeToDo => {
         const {completeTodo} = this.props;
-        completeTodo(completeTodo);
+        completeToDo(completeTodo);
     };
     render() {
         const{todoId, todo} = this.props;
@@ -13,6 +12,12 @@ class ListItem extends Component {
             <div key="toDoName">
                 <h4>
                     {todo.title}
-                    <span onClick={() => this.handleComplete(todoId)}>
+                    <span onClick={() => this.handleComplete({todoId})}>
+                        <p>Done</p>
+                        </span>
+                        </h4>
+                        </div>
+                        );
                     }
-                    export default connect(null, {completeTodo})(ListItem);
+                    }
+                    export default connect(null, {completeToDo})(ListItem);
