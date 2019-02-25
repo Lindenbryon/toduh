@@ -8,12 +8,6 @@ const routes = [
         path: '/',
         exact: true,
         main: List
-    },
-    {
-        name: '',
-        path: '/',
-        exact: true,
-        main: ''
     }
 ];
 
@@ -21,7 +15,12 @@ const AppRouter = () => (
     <BrowserRouter>
         <div>
             <header className={'header'}>
-
+                <ul>
+                    <li>
+                        <NavLink to="/" className="normal" activeClassName="active" exact>home</NavLink>
+                    </li>
+                    <li></li>
+                </ul>
             </header>
             {routes.map((route, index) => (
                 <div>
