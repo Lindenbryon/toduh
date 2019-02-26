@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {completeToDo} from '../actions';
 class ListItem extends Component {
-    handleComplete = completeToDo => {
-        const {completeTodo} = this.props;
-        completeToDo(completeTodo);
+    handleComplete = completeToDoId => {
+        const { completeToDo } = this.props;
+        completeToDo(completeToDoId);
     };
     render() {
         const{todoId, todo} = this.props;

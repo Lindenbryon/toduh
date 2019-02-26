@@ -11,26 +11,28 @@ const routes = [
     }
 ];
 
+const RenderNavItem = (route, index) => (
+    <NavLink key={index} to={route.path} exact={route.exact} className={'navItem'} activeClassName={'active'}>{route.name}</NavLink>
+);
+
 const AppRouter = () => (
     <BrowserRouter>
-        <div>
+        <div className={'height-100'}>
             <header className={'header'}>
-                <ul>
-                    <li>
-                        <NavLink to="/" className="normal" activeClassName="active" exact>home</NavLink>
-                    </li>
-                    <li></li>
-                </ul>
+                <div className={'logo'}/>
+                <div className={'topNav'}>
+                    {routes.map((route, index) => (
+                        RenderNavItem(route, index)
+                    ))}
+                </div>
             </header>
             {routes.map((route, index) => (
-                <div>
-                    <Route
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.main}
-                    />
-                </div>
+                <Route
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.main}
+                />
             ))}
         </div>
     </BrowserRouter>
