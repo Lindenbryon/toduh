@@ -14,10 +14,10 @@ class ListItem extends Component {
                     {todo.title}
                     <span onClick={() => this.handleComplete({todoId})}>
                         <p>Done</p>
-                        </span>
-                        </h4>
-                        </div>
-                        );
-                    }
-                    }
-                    export default connect(null, {completeToDo})(ListItem);
+                    </span>
+                </h4>
+            </div>
+        );
+    }
+}
+export default connect(null, {completeToDo})(ListItem);
