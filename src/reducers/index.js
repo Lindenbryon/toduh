@@ -7,5 +7,5 @@ import { firestoreReducer } from 'redux-firestore';
 export default combineReducers({
     firebase: firebaseReducer,
     firestore: firestoreReducer,
-    data
+    listData: data
 })

@@ -15,6 +15,7 @@ class List extends Component {
     };
 
     formSubmit = e => {
+
         const {formValue} = this.state;
         const {addToDo} = this.props;
         e.preventDefault();
@@ -44,8 +45,8 @@ class List extends Component {
         }
     };
     renderToDo() {
-        const {data} = this.props;
-        const toDos = _.map(data, (value, key) => {
+        const {listData} = this.props;
+        const toDos = _.map(listData, (value, key) => {
             return <ListItem key={key} todoId={key} todo={value} />;
         });
         if (!_.isEmpty(toDos)) {
@@ -82,9 +83,9 @@ class List extends Component {
     }
 }
 
-const mapStateToProps = ({data}) => {
+const mapStateToProps = ({listData}) => {
     return {
-        data
+        listData
     }
 };
 
